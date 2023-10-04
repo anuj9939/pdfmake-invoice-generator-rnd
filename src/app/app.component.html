@@ -2,6 +2,8 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-secondary d-flex justify-content-between">
     <a class="navbar-brand" href="#">INVOICE GENERATOR</a>
     <div>
+        <a class="text-white" href="https://github.com/anuj9939/pdfmake-invoice-generator-rnd" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <span class="text-white -mt-5 mb-3 ml-2 mr-2">Source:</span>
         <a class="text-white" href="https://github.com/ngdevelop-tech/angular-pdfmake-invoice-generator" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
     </div>
 </nav>
@@ -79,15 +81,15 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th width="25%">Product</th>
-                                        <th width="25%">Price</th>
-                                        <th width="25%">Quantity</th>
-                                        <th width="25%">Amount</th>
+                                        <th class="col-3">Product</th>
+                                        <th class="col-3">Price</th>
+                                        <th class="col-3">Quantity</th>
+                                        <th class="col-3">Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let product of invoice.products; let i = index">
-                                        <td scope="row">
+                                        <td class="row">
                                             <input
                                                 type="text"
                                                 class="form-control"
@@ -159,7 +161,7 @@
     <div class="bg-light text-center p-2">
         <h6>
             Made with 💗 by
-            <a class="twitter-follow-button" href="https://twitter.com/ankit_ngdevelop" target="_blank"> <i class="fa fa-twitter" aria-hidden="true"></i>Ankit_NgDevelop</a>.
+            <a class="twitter-follow-button" href="http://facebook.com/anuj9939" target="_blank"> <i class="fa fa-facebook" aria-hidden="true"></i>Anuj Kumar</a>.
         </h6>
     </div>
 </footer>
