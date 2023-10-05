@@ -249,10 +249,7 @@ export class AppComponent {
             { testName: 'Blood Glucose Level', referenceRange: '70-100 mg/dL', result: '95 mg/dL' },
             { testName: 'Complete Blood Count (CBC)', referenceRange: 'Normal', result: 'Normal' },
             { testName: 'Blood Glucose Level', referenceRange: '70-100 mg/dL', result: '95 mg/dL' },
-            { testName: 'Complete Blood Count (CBC)', referenceRange: 'Normal', result: 'Normal' },
-            { testName: 'Blood Glucose Level', referenceRange: '70-100 mg/dL', result: '95 mg/dL' },
-            { testName: 'Complete Blood Count (CBC)', referenceRange: 'Normal', result: 'Normal' },
-            { testName: 'Blood Glucose Level', referenceRange: '70-100 mg/dL', result: '95 mg/dL' },
+
             // Add more test details as needed
         ];
 
