@@ -300,18 +300,21 @@ export class AppComponent {
                         margin: [40, 10, 40, 0],
                     },
                     // Patient Information
+
                     {
-                        text: 'Patient Information',
-                        style: 'subheader',
+                        table: {
+                            widths: ['*', '*'],
+
+                            body: [
+                                [{ text: 'Client', style: [{ fontSize: 12 }] }, {}],
+
+                                [{ text: 'Patient Name: ' + patientInfo.name }, { text: 'Patient Name: ' + patientInfo.name }],
+                                [{ text: 'Date of Birth: ' + patientInfo.dateOfBirth }, { text: 'Date of Birth: ' + patientInfo.dateOfBirth }],
+                            ],
+                        },
                         margin: [40, 0, 40, 0],
-                    },
-                    {
-                        text: 'Patient Name: ' + patientInfo.name,
-                        margin: [40, 0, 40, 0],
-                    },
-                    {
-                        text: 'Date of Birth: ' + patientInfo.dateOfBirth,
-                        margin: [40, 0, 40, 0],
+                        layout: 'noBorders',
+                        style: ['header', 'general'],
                     },
                 ];
 
@@ -351,6 +354,9 @@ export class AppComponent {
                 subheader: {
                     fontSize: 14,
                     bold: true,
+                },
+                general: {
+                    fontSize: 10,
                 },
             },
         };
