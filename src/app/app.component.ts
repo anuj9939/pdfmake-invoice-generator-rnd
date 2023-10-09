@@ -5,6 +5,15 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
 import htmlToPdfmake from 'html-to-pdfmake';
 
+// (<any>pdfMake).fonts = {
+//     ...pdfFonts.pdfMake.vfs,
+//     Tahoma: {
+//         normal: 'assets/fonts/Tahoma-Regular-font.ttf', // Path to Tahoma font file
+//         bold: 'assets/fonts/Tahoma-Bold.ttf',
+//         bolditalics: 'assets/fonts/Tahoma-Bold-Italic.ttf',
+//     },
+// };
+
 class Product {
     name: string = '';
     price: number = 0;
@@ -339,8 +348,8 @@ export class AppComponent {
                 // Additional Comments or Notes
                 {
                     text: htmlToPdfmake(reportInfoOfXray.resultDescription),
-                    style: '',
-                    margin: [0, 0, 0, 10],
+                    style: 'tahomaStyle',
+                    margin: [],
                 },
                 {
                     text: patientInfo.notes || 'No additional comments.',
@@ -491,6 +500,9 @@ export class AppComponent {
                 },
                 general: {
                     fontSize: 10,
+                },
+                tahomaStyle: {
+                    font: 'Tahoma', // Use the Tahoma font family
                 },
             },
         };
