@@ -248,8 +248,56 @@ export class AppComponent {
             patitentID: 387,
             patitentName: 'Mrs MAHIMA DEVI,1988-10-06,F',
             reportStatus: null,
-            resultDescription:
-                '<p style="margin-left:144px"><span style="font-size:12pt"><span ><strong><em><span style="font-size:11.0pt"><span style="">X RAY PELVIS &nbsp;AP</span></span></em></strong></span></span><span style="font-size:12pt"><span ><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em></strong></span></span></p>\n\n<p style="text-align:justify"><span style="font-size:12pt"><span ><em><span style="">Visualised bones are unremarkable .</span></em></span></span></p>\n\n<p style="text-align:justify"><span style="font-size:12pt"><span ><em><span style="">Bilateral hip joints are normal .</span></em></span></span></p>\n\n<p style="text-align:justify"><span style="font-size:12pt"><span ><em><span style="">Bilateral SI joint are normal.</span></em></span></span></p>\n\n<p style="text-align:justify"><span style="font-size:12pt"><span ><strong><em><span style="">IMPRESSION :&nbsp;&nbsp; </span></em></strong></span></span><span style="font-size:12pt"><span ><em><span style="font-size:14.0pt"><span style="">Unremarkable&nbsp; scan</span></span></em><em><span style="font-size:18.0pt"><span style="">. </span></span></em></span></span></p>\n',
+            resultDescription: `<p align="center"><b><u>CT &ndash; BRAIN (CECT)</u></b></p>
+
+            <p><b><u>STUDY PROTOCOL:</u></b></p>
+            
+            <p>Axial 5 mm cuts were obtained from the base of the skull to the vertex.</p>
+            
+            <p><b><u>HISTORY</u></b>:&nbsp;Seizure</p>
+            
+            <p><b><u>FINDINGS:</u></b></p>
+            
+            <ul>
+                <li><b>There is no intra cranial bleed.</b></li>
+                <li><b>There is a ring enhancing lesion measuring 7 x 6 mm (AP x TR) and showing eccentric hyperdensity&nbsp;in the right parietal lobe and mild surrounding edema.<br />
+                <br />
+                Features are suggestive of neurocysticercosis.</b><br />
+                &nbsp;</li>
+                <li><b>There is mild bilateral maxillary sinusitis.</b></li>
+            </ul>
+            
+            <p>The rest of the cerebral hemispheres, brainstem and cerebellum demonstrate normal attenuation.</p>
+            
+            <p>The basal ganglia, internal capsule, corpus callosum and thalamus appear normal.</p>
+            
+            <p>The cerebral ventricles are normal.</p>
+            
+            <p>The cisternal spaces appear normal.</p>
+            
+            <p>The interhemispheric fissure is centered on the midline.</p>
+            
+            <p>Sella and pituitary are normal. Parasellar structures are unremarkable.</p>
+            
+            <p>There are no abnormalities in the cerebellopontine angle areas on both sides.</p>
+            
+            <p>The orbital contents are unremarkable.</p>
+            
+            <p>There are no abnormalities in the calvarium.</p>
+            
+            <p>Cranio-cervical junction is intact.</p>
+            
+            <p><b><u>IMPRESSION:</u></b></p>
+            
+            <ul>
+                <li><em><b>There is a ring enhancing lesion measuring 7 x 6 mm (AP x TR) and showing eccentric hyperdensity&nbsp;in the right parietal lobe and mild surrounding edema.<br />
+                <br />
+                Features are suggestive of neurocysticercosis.</b></em></li>
+                <li><em><b>There is mild bilateral maxillary sinusitis.</b></em><br />
+                Suggested clinical correlation</li>
+            </ul>
+            <p>Cranio-cervical junction is intact.</p>
+                `,
             isPrinted: null,
             remarks: null,
             attachmentImageFirst: '',
@@ -318,8 +366,25 @@ export class AppComponent {
 
             // Add more test details as needed
         ];
-
+        // let description = JSON.stringify(reportInfoOfXray.resultDescription);
         // Define the document definition object
+
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(reportInfoOfXray.resultDescription, 'text/html');
+
+        // Extract and process the content as needed
+        const content2 = Array.from(htmlDoc.body.childNodes).map((node: any) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+                return { text: node.textContent, margin: [0, 0, 0, 10] };
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+                if (node.nodeName === 'UL') {
+                    const listItems = Array.from(node.querySelectorAll('li')).map((li: any) => li.textContent);
+                    return { ul: listItems, margin: [0, 0, 0, 10] };
+                } else return null;
+                // You can add more conditions for other HTML elements as needed
+            } else return null;
+        });
+        console.log(content2);
         var docDefinition: any = {
             // Page size and margins
             pageSize: 'A4',
@@ -346,10 +411,15 @@ export class AppComponent {
                     margin: [0, 0, 0, 15],
                 },
                 // Additional Comments or Notes
+
+                // {
+                //     text: htmlToPdfmake(reportInfoOfXray.resultDescription, { ignoreStyles: ['font-family'] }),
+                //     // style: 'tahomaStyle',
+                //     margin: [],
+                // },
                 {
-                    text: htmlToPdfmake(reportInfoOfXray.resultDescription),
-                    style: 'tahomaStyle',
-                    margin: [],
+                    // columns: [this.convertCkeditorToPdfmake(reportInfoOfXray.resultDescription)],
+                    columns: [reportInfoOfXray.resultDescription],
                 },
                 {
                     text: patientInfo.notes || 'No additional comments.',
@@ -501,9 +571,9 @@ export class AppComponent {
                 general: {
                     fontSize: 10,
                 },
-                tahomaStyle: {
-                    font: 'Tahoma', // Use the Tahoma font family
-                },
+                // tahomaStyle: {
+                //     font: 'Tahoma', // Use the Tahoma font family
+                // },
             },
         };
 
@@ -525,4 +595,59 @@ export class AppComponent {
     addProduct() {
         this.invoice.products.push(new Product());
     }
+
+    // // Ckeditor content
+    // private convertCkeditorToPdfmake(ckeditorContent: string): any[] {
+    //     // Use htmlToPdfmake to convert CKEditor content to pdfmake content
+    //     const pdfmakeContent: any = htmlToPdfmake(ckeditorContent);
+
+    //     // Process pdfmakeContent to handle lists
+    //     return this.handleLists(pdfmakeContent);
+    // }
+
+    // private handleLists(content: any[]): any[] {
+    //     // Function to handle list items
+    //     const processListItems = (items: any[], ordered: boolean) => {
+    //         const listContent: any[] = [];
+    //         items.forEach((item) => {
+    //             const listItem: any = { text: item.text || '' };
+    //             if (item.ul) {
+    //                 // Unordered list (bulleted)
+    //                 listItem.ul = item.ul;
+    //             } else if (item.ol) {
+    //                 // Ordered list (numbered)
+    //                 listItem.ol = item.ol;
+    //             }
+    //             listContent.push(listItem);
+    //         });
+    //         return { [ordered ? 'ol' : 'ul']: listContent };
+    //     };
+
+    //     const updatedContent: any[] = [];
+    //     let currentList: any[] = [];
+    //     let isOrdered = false;
+
+    //     content.forEach((item) => {
+    //         if (item.ul || item.ol) {
+    //             // List item
+    //             if (item.ul) isOrdered = false;
+    //             if (item.ol) isOrdered = true;
+    //             currentList.push(item);
+    //         } else {
+    //             // Non-list item
+    //             if (currentList.length > 0) {
+    //                 updatedContent.push(processListItems(currentList, isOrdered));
+    //                 currentList = [];
+    //             }
+    //             updatedContent.push(item);
+    //         }
+    //     });
+
+    //     // If there are remaining list items, process them
+    //     if (currentList.length > 0) {
+    //         updatedContent.push(processListItems(currentList, isOrdered));
+    //     }
+
+    //     return updatedContent;
+    // }
 }
