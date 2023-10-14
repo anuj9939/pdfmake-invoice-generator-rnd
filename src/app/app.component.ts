@@ -248,56 +248,7 @@ export class AppComponent {
             patitentID: 387,
             patitentName: 'Mrs MAHIMA DEVI,1988-10-06,F',
             reportStatus: null,
-            resultDescription: `<p align="center"><b><u>CT &ndash; BRAIN (CECT)</u></b></p>
-
-            <p><b><u>STUDY PROTOCOL:</u></b></p>
-            
-            <p>Axial 5 mm cuts were obtained from the base of the skull to the vertex.</p>
-            
-            <p><b><u>HISTORY</u></b>:&nbsp;Seizure</p>
-            
-            <p><b><u>FINDINGS:</u></b></p>
-            
-            <ul>
-                <li><b>There is no intra cranial bleed.</b></li>
-                <li><b>There is a ring enhancing lesion measuring 7 x 6 mm (AP x TR) and showing eccentric hyperdensity&nbsp;in the right parietal lobe and mild surrounding edema.<br />
-                <br />
-                Features are suggestive of neurocysticercosis.</b><br />
-                &nbsp;</li>
-                <li><b>There is mild bilateral maxillary sinusitis.</b></li>
-            </ul>
-            
-            <p>The rest of the cerebral hemispheres, brainstem and cerebellum demonstrate normal attenuation.</p>
-            
-            <p>The basal ganglia, internal capsule, corpus callosum and thalamus appear normal.</p>
-            
-            <p>The cerebral ventricles are normal.</p>
-            
-            <p>The cisternal spaces appear normal.</p>
-            
-            <p>The interhemispheric fissure is centered on the midline.</p>
-            
-            <p>Sella and pituitary are normal. Parasellar structures are unremarkable.</p>
-            
-            <p>There are no abnormalities in the cerebellopontine angle areas on both sides.</p>
-            
-            <p>The orbital contents are unremarkable.</p>
-            
-            <p>There are no abnormalities in the calvarium.</p>
-            
-            <p>Cranio-cervical junction is intact.</p>
-            
-            <p><b><u>IMPRESSION:</u></b></p>
-            
-            <ul>
-                <li><em><b>There is a ring enhancing lesion measuring 7 x 6 mm (AP x TR) and showing eccentric hyperdensity&nbsp;in the right parietal lobe and mild surrounding edema.<br />
-                <br />
-                Features are suggestive of neurocysticercosis.</b></em></li>
-                <li><em><b>There is mild bilateral maxillary sinusitis.</b></em><br />
-                Suggested clinical correlation</li>
-            </ul>
-            <p>Cranio-cervical junction is intact.</p>
-                `,
+            resultDescription: `<p style=\"text-align: justify;\"><strong><u>HISTOPATHOLOGY/BIOPSY REPORT</u></strong></p>\n\n<p style=\"text-align: justify;\"><u><strong>BIOPSY NUMBER: NM/50/23.</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong>CLINICAL HISTORY:</strong></u>&nbsp;<b>left ovarian cyst.</b></p>\n\n<p style=\"text-align: justify;\"><strong><u>GROSS:</u>&nbsp;</strong></p>\n\n<p style=\"text-align: justify;\">Single container received contains specimen of partial hysterectomy specimen/Supracervical hysterectomy specimen with attached bilateral&nbsp;adenexa measuring 6.5x4x3 cm. Endometrial&nbsp;canal measures 3&nbsp;cm, endometrial thickness measuring 0.3 cm,&nbsp;average myometrial thickness measures 2.5 cm. Attached right ovary measures 3x2x2 cm. Attached right fallopian tube measures 3.8 cm. Outer surface and cut surface of right ovary is unremarkable. Right fallopian tube is unremarkable.&nbsp;left&nbsp;ovary measures 4.5x4x3 cm. Outer surface of left ovary is capsulated pale white and glistening. Cut surface shows a unilocular cyst measuring 0.5 cm in diameter. Left fallopian tube is unremarkable grossly and measures 4&nbsp;cm in length.&nbsp;Section from &nbsp;Endomyometrium,&nbsp;Right&nbsp;Ovary and fallopian tube,Left&nbsp;ovary and fallopian tube with cyst wall taken in representative blocks. (NM/50/23).</p>\n\n<p style=\"text-align: justify;\"><strong><u>Microscopy:</u>&nbsp;</strong></p>\n\n<p style=\"text-align: justify;\"><strong><u>Endomyometrium:</u> </strong>Section shows non-secretory endometrium. Myometrium is unremarkable. No granulomas or malignancy seen.</p>\n\n<p style=\"text-align: justify;\"><strong><u>Bilateral Ovaries&nbsp;:</u></strong>&nbsp;Section from right&nbsp;ovary&nbsp;shows unremarkable histology.&nbsp;Left ovary shows a simple cystic follicle. Areas of congestion and hemorrhage seen in both the ovaries.&nbsp;No granulomas or malignancy seen.</p>\n\n<p style=\"text-align: justify;\"><strong><u>Bilateral Fallopian tubes:</u></strong>&nbsp;Section shows bilateral fallopian tubes of unremarkable histology.</p>\n\n<p style=\"text-align: justify;\"><u><strong>Impression:</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong>Endomyometrium- Non-secretory Endometrium.</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong>Myometrium: Unremarkable.</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong>Right </strong></u><u><strong>Ovary: Unremarkable.</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong>Left Ovary: Follicular cyst.</strong></u></p>\n\n<p style=\"text-align: justify;\"><u><strong><span style=\"text-align:justify;\">Bilateral</span> Fallopian tubes: Unremarkable histology.</strong></u></p>\n\n<p style=\"text-align: justify;\"><strong>Advised: Clinicoradiological correlation.</strong></p>\n\n<p style=\"text-align: justify;\"><span style=\"text-align:justify;\"><u><strong>Note</strong></u></span>: Slides and Block have been handed over to patient for better preservation.</p>\n`,
             isPrinted: null,
             remarks: null,
             attachmentImageFirst: '',
@@ -369,23 +320,23 @@ export class AppComponent {
         // let description = JSON.stringify(reportInfoOfXray.resultDescription);
         // Define the document definition object
 
-        const parser = new DOMParser();
-        const htmlDoc = parser.parseFromString(reportInfoOfXray.resultDescription, 'text/html');
+        // const parser = new DOMParser();
+        // const htmlDoc = parser.parseFromString(reportInfoOfXray.resultDescription, 'text/html');
 
-        // Extract and process the content as needed
-        const content2 = Array.from(htmlDoc.body.childNodes).map((node: any) => {
-            if (node.nodeType === Node.TEXT_NODE) {
-                return { text: node.textContent, margin: [0, 0, 0, 10] };
-            } else if (node.nodeType === Node.ELEMENT_NODE) {
-                if (node.nodeName === 'UL') {
-                    const listItems = Array.from(node.querySelectorAll('li')).map((li: any) => li.textContent);
-                    return { ul: listItems, margin: [0, 0, 0, 10] };
-                } else return null;
-                // You can add more conditions for other HTML elements as needed
-            } else return null;
-        });
-        console.log(content2);
-        var docDefinition: any = {
+        // // Extract and process the content as needed
+        // const content2 = Array.from(htmlDoc.body.childNodes).map((node: any) => {
+        //     if (node.nodeType === Node.TEXT_NODE) {
+        //         return { text: node.textContent, margin: [0, 0, 0, 10] };
+        //     } else if (node.nodeType === Node.ELEMENT_NODE) {
+        //         if (node.nodeName === 'UL') {
+        //             const listItems = Array.from(node.querySelectorAll('li')).map((li: any) => li.textContent);
+        //             return { ul: listItems, margin: [0, 0, 0, 10] };
+        //         } else return null;
+        //         // You can add more conditions for other HTML elements as needed
+        //     } else return null;
+        // });
+        // console.log(content2);
+        let docDefinition: any = {
             // Page size and margins
             pageSize: 'A4',
             pageMargins: [40, 200, 40, 80],
@@ -418,8 +369,9 @@ export class AppComponent {
                 //     margin: [],
                 // },
                 {
-                    // columns: [this.convertCkeditorToPdfmake(reportInfoOfXray.resultDescription)],
-                    columns: [reportInfoOfXray.resultDescription],
+                    columns: [this.convertCkeditorToPdfmake(reportInfoOfXray.resultDescription)],
+                    margin: [0, 0, 0, 0],
+                    // columns: [reportInfoOfXray.resultDescription],
                 },
                 {
                     text: patientInfo.notes || 'No additional comments.',
@@ -596,58 +548,58 @@ export class AppComponent {
         this.invoice.products.push(new Product());
     }
 
-    // // Ckeditor content
-    // private convertCkeditorToPdfmake(ckeditorContent: string): any[] {
-    //     // Use htmlToPdfmake to convert CKEditor content to pdfmake content
-    //     const pdfmakeContent: any = htmlToPdfmake(ckeditorContent);
+    // Ckeditor content
+    private convertCkeditorToPdfmake(ckeditorContent: string): any[] {
+        // Use htmlToPdfmake to convert CKEditor content to pdfmake content
+        const pdfmakeContent: any = htmlToPdfmake(ckeditorContent);
 
-    //     // Process pdfmakeContent to handle lists
-    //     return this.handleLists(pdfmakeContent);
-    // }
+        // Process pdfmakeContent to handle lists
+        return this.handleLists(pdfmakeContent);
+    }
 
-    // private handleLists(content: any[]): any[] {
-    //     // Function to handle list items
-    //     const processListItems = (items: any[], ordered: boolean) => {
-    //         const listContent: any[] = [];
-    //         items.forEach((item) => {
-    //             const listItem: any = { text: item.text || '' };
-    //             if (item.ul) {
-    //                 // Unordered list (bulleted)
-    //                 listItem.ul = item.ul;
-    //             } else if (item.ol) {
-    //                 // Ordered list (numbered)
-    //                 listItem.ol = item.ol;
-    //             }
-    //             listContent.push(listItem);
-    //         });
-    //         return { [ordered ? 'ol' : 'ul']: listContent };
-    //     };
+    private handleLists(content: any[]): any[] {
+        // Function to handle list items
+        const processListItems = (items: any[], ordered: boolean) => {
+            const listContent: any[] = [];
+            items.forEach((item) => {
+                const listItem: any = { text: item.text || '' };
+                if (item.ul) {
+                    // Unordered list (bulleted)
+                    listItem.ul = item.ul;
+                } else if (item.ol) {
+                    // Ordered list (numbered)
+                    listItem.ol = item.ol;
+                }
+                listContent.push(listItem);
+            });
+            return { [ordered ? 'ol' : 'ul']: listContent };
+        };
 
-    //     const updatedContent: any[] = [];
-    //     let currentList: any[] = [];
-    //     let isOrdered = false;
+        const updatedContent: any[] = [];
+        let currentList: any[] = [];
+        let isOrdered = false;
 
-    //     content.forEach((item) => {
-    //         if (item.ul || item.ol) {
-    //             // List item
-    //             if (item.ul) isOrdered = false;
-    //             if (item.ol) isOrdered = true;
-    //             currentList.push(item);
-    //         } else {
-    //             // Non-list item
-    //             if (currentList.length > 0) {
-    //                 updatedContent.push(processListItems(currentList, isOrdered));
-    //                 currentList = [];
-    //             }
-    //             updatedContent.push(item);
-    //         }
-    //     });
+        content.forEach((item) => {
+            if (item.ul || item.ol) {
+                // List item
+                if (item.ul) isOrdered = false;
+                if (item.ol) isOrdered = true;
+                currentList.push(item);
+            } else {
+                // Non-list item
+                if (currentList.length > 0) {
+                    updatedContent.push(processListItems(currentList, isOrdered));
+                    currentList = [];
+                }
+                updatedContent.push(item);
+            }
+        });
 
-    //     // If there are remaining list items, process them
-    //     if (currentList.length > 0) {
-    //         updatedContent.push(processListItems(currentList, isOrdered));
-    //     }
+        // If there are remaining list items, process them
+        if (currentList.length > 0) {
+            updatedContent.push(processListItems(currentList, isOrdered));
+        }
 
-    //     return updatedContent;
-    // }
+        return updatedContent;
+    }
 }
