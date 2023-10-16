@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="3in" height="3in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3000 3000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil1 {fill:#FFFF99}
+    .fil0 {fill:#FFFFCC}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <rect x="2" y="-4" width="1726" height="1726"/>
+    </clipPath>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_849090320">
+   <g style="clip-path:url(#id0)">
+    <image x="2" y="-4" width="1726" height="1726" xlink:href="PATIENT COUNT CHART_Images\PATIENT COUNT CHART_ImgID1.png"/>
+   </g>
+   <path class="fil0" d="M2474 1082c-39,23 -27,70 -27,122l0 1652c0,46 -7,98 42,104 38,5 438,1 447,-3 41,-14 30,-69 30,-119l0 -1653c0,-50 10,-101 -43,-108 -36,-5 -435,-3 -449,5z"/>
+   <path class="fil0" d="M1784 1683c-33,17 -29,43 -29,86l0 1120c0,42 6,67 44,71 37,4 434,2 447,-3 42,-18 28,-124 28,-193l1 -1009c0,-38 -4,-70 -42,-75 -38,-6 -433,-4 -449,3z"/>
+   <path class="fil0" d="M1096 2105c-45,19 -32,67 -32,140 0,87 -4,667 3,685 17,45 95,31 143,31 410,0 373,35 373,-142 0,-87 4,-665 -3,-685 -15,-46 -90,-33 -143,-33 -48,0 -319,-5 -341,4z"/>
+   <path class="fil1" d="M2936 366l-25 0c-1,1 -2,1 -3,2l-158 57c-54,18 -106,37 -161,56 -18,7 -64,21 -77,29 -32,19 -25,55 -1,74 18,14 42,33 58,48 16,15 46,39 56,54l-135 155c-14,14 -17,15 -29,31 -18,22 -39,40 -58,62 -38,42 -284,287 -330,322 -15,12 -18,16 -32,29l-64 55c-66,62 -261,207 -337,261 -265,189 -612,382 -943,487 -59,19 -122,37 -185,51 -62,14 -125,10 -137,44 -6,19 0,37 9,46 37,37 323,-56 379,-75 113,-38 238,-86 339,-138 186,-95 284,-146 455,-257 130,-84 168,-118 279,-198 24,-17 45,-35 68,-53l258 -218c12,-11 17,-20 30,-30 12,-11 21,-18 32,-28l58 -58c69,-63 124,-129 180,-181 27,-24 215,-235 224,-253 27,11 97,82 125,104 76,59 81,-47 92,-104 6,-31 66,-317 62,-341 -4,-21 -16,-23 -29,-33z"/>
+   <path class="fil0" d="M400 2313c-38,19 -28,69 -28,117l0 440c0,112 15,91 200,91 42,0 270,5 290,-4 38,-15 29,-71 29,-115l0 -439c0,-118 -18,-96 -199,-96 -45,0 -270,-6 -292,6z"/>
+  </g>
+ </g>
+</svg>
